@@ -1,0 +1,6 @@
+ll sqrtN(ll n){
+	ll x = sqrt(n);
+	if(x*x==n)return n;
+	x++;
+	return (x*x);
+}
