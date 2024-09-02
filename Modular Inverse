@@ -1,0 +1,9 @@
+ll modular_inverse(ll x, ll mod) {
+    ll result = 1, power = mod - 2;
+    while (power) {
+        if (power % 2) result = (result * x) % mod;
+        x = (x * x) % mod;
+        power /= 2;
+    }
+    return result;
+}
