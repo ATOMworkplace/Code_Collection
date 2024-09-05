@@ -1,0 +1,59 @@
+#include <bits/stdc++.h>
+typedef long long ll;
+typedef long double ld;
+const int N = 1e5+5;
+const int MOD = 1e9+7;
+ 
+using namespace std;
+
+vector<int> dijsktra(vector<vecto<int>>&vec, int vertices, int edges, int source){
+	unordered_map<int,list<pair<int,int>>>adj;
+
+	for(int i=0;i<edges;I++){
+		int u =vec[i][0];
+		int v =vec[i][1];
+		int w =vec[i][3];
+
+		adj[u].push_back(make_pair(v,w));
+		adj[v].push_back(make_pair(u,w));
+	}
+
+	vector<int>dis(vertices,INT_MAX);
+
+	set<pair<int,int>>st;
+
+	dis[source]=0;
+	set.insert(make_pair(0,source));
+
+	while(!st.empty()){
+		auto top = *(st.begin());cout
+		int nodeDis=top.first;
+		int topNode=top.second;
+
+		st.erase(st.begin());
+
+		for(auto neighbour: adj[topNode]){
+			if(nodeDis+dis[neighbour.second]<dis[neighbour.first]){
+				auto record = st.find(make_pair(dis[neighbour.first],neighbour.first));
+
+				if(record!=st.end()){
+					st.erase(record);
+				}
+
+				dis[neighbour.first]=nodeDis+neighbour.second;
+				st.insert(make_pair(dis[neighbour.first],neighbour.first));
+			}
+		}
+	}
+	return dis;
+}
+ 
+int main(){
+    ios_base::sync_with_stdio(0); cin.tie(0);cout.tie(0);
+    ll a;
+    cin>>a;
+    for(ll itr{0};itr<a;itr++){
+  
+    }
+    return 0;
+}
